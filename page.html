@@ -73,7 +73,7 @@
                 }
 
                 if (data != "Algo salió mal") {
-                    createElement("p", data.weather[0].description + " " + lugar + ", con una temperatura de " + Math.round(data.main.temp) + "ºC.").parent(texto);
+                    createElement("p", data.weather[0].description + " " + lugar + ", con una temperatura de " + Math.round(data.main.temp) + "ºC y con una humedad relativa del aire de un " + Math.round(data.main.humidity) + "%.").parent(texto);
                     console.log(data);
                     //vamos a buscar un ícono provisorio en https://openweathermap.org/weather-conditions
                     imagen.setAttribute("src", "images/" + data.weather[0].icon + ".svg");
@@ -85,6 +85,7 @@
                     } else {
                         selectAll("nav a")[3].addClass("active");
                     }
+
                 } else {
                     createElement("p", data).parent(texto);
                 }
